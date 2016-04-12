@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Title</th>
+        <th>Text</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @bills.each do |bill| %>
+        <tr>
+          <td>
+            <%= link_to bill.name, bill_path(bill) %>
+          </td>
+          <td>
+            <%=bill.description %>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%= will_paginate @bills %>
+  </div>
+  <div class="col-md-3"></div>
+</div>
